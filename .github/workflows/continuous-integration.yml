@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -26,9 +25,13 @@ jobs:
 
       - name: Build with Gradle Wrapper
         run: ./gradlew build
+      - name: Sonarqube
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: ./gradlew jacocoTestReport sonarqube --stacktrace -i
 
   dependency-submission:
-
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -43,3 +46,4 @@ jobs:
 
       - name: Generate and submit dependency graph
         uses: gradle/actions/dependency-submission@v4
+
