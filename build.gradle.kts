@@ -49,6 +49,7 @@ sonarqube {
         property("sonar.organization", "triplem")
         property("sonar.host.url", "https://sonarcloud.io")
 
-        property("sonar.coverage.jacoco.xmlReportPaths", project.layout.buildDirectory.file("reports/kover/report.xml"))
+        property("sonar.coverage.jacoco.xmlReportPaths",
+            project.layout.buildDirectory.file("reports/kover/report.xml").get().asFile)
     }
 }
