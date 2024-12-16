@@ -2,6 +2,9 @@ package org.javafreedom.khol
 
 import kotlinx.datetime.LocalDate
 
+/**
+ * Some doc
+ */
 class KHol(val holidays: HolidayDeclarations, val year: Int, val validIn: String) {
 
     fun validHolidays() : List<LocalDate> {
@@ -16,5 +19,4 @@ class KHol(val holidays: HolidayDeclarations, val year: Int, val validIn: String
 
         return result
     }
-
 }

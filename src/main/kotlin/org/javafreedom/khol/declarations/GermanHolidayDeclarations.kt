@@ -1,6 +1,11 @@
-package org.javafreedom.khol
+@file:Suppress("detekt:style:MagicNumber")
 
-enum class GermanFederalStates(val longName: String) {
+package org.javafreedom.khol.declarations
+
+import org.javafreedom.khol.Declaration
+import org.javafreedom.khol.HolidayDeclarations
+
+enum class GermanFederalStates(val description: String) {
     BW("Baden-Wuerttemberg"),
     BY("Bavaria"),
     BY_A("Bavaria (Augsburg)"), // this is an exception, it is not a Federal State, but a more specific location
@@ -36,17 +41,24 @@ class GermanHolidayDeclarations: HolidayDeclarations("DE") {
         Declaration.FixedHoliday(month = 12, day = 26, name = "Second Day of Christmas")
     )
 
-    val epiphany = Declaration.FixedHoliday(month = 1, day = 6, "Epiphany",
+    val epiphany = Declaration.FixedHoliday(
+        month = 1, day = 6, "Epiphany",
         validIn = setOf(
             GermanFederalStates.BW.name,
             GermanFederalStates.BY.name,
             GermanFederalStates.BY_A.name,
-            GermanFederalStates.ST.name))
-    val womensDay = Declaration.FixedHoliday(month = 3, day = 8, "International Womens Day",
+            GermanFederalStates.ST.name
+        )
+    )
+    val womensDay = Declaration.FixedHoliday(
+        month = 3, day = 8, "International Womens Day",
         validIn = setOf(
             GermanFederalStates.BE.name,
-            GermanFederalStates.MV.name))
-    val corpusChristi = Declaration.EasterBasedHoliday(60, "Corpus Christi",
+            GermanFederalStates.MV.name
+        )
+    )
+    val corpusChristi = Declaration.EasterBasedHoliday(
+        60, "Corpus Christi",
         validIn = setOf(
             GermanFederalStates.BW.name,
             GermanFederalStates.BY.name,
@@ -54,32 +66,44 @@ class GermanHolidayDeclarations: HolidayDeclarations("DE") {
             GermanFederalStates.NW.name,
             GermanFederalStates.RP.name,
             GermanFederalStates.SL.name
-        ))
-    val augsburgHighPeaceDay = Declaration.FixedHoliday(month = 8, day = 8, "Augsburg High Peace",
-        validIn = setOf(GermanFederalStates.BY_A.name))
-    val assumptionDay = Declaration.FixedHoliday(month = 8, day = 15, "Assumption Day",
+        )
+    )
+    val augsburgHighPeaceDay = Declaration.FixedHoliday(
+        month = 8, day = 8, "Augsburg High Peace",
+        validIn = setOf(GermanFederalStates.BY_A.name)
+    )
+    val assumptionDay = Declaration.FixedHoliday(
+        month = 8, day = 15, "Assumption Day",
         validIn = setOf(
             GermanFederalStates.BY.name,
             GermanFederalStates.BY_A.name
-        ))
-    val childrenDay = Declaration.FixedHoliday(month = 9, day = 20, "Children Day",
-        validIn = setOf(GermanFederalStates.TH.name), validFromYear = 2019)
-    val reformationDay = Declaration.FixedHoliday(month = 10, day = 31, "Reformation Day",
+        )
+    )
+    val childrenDay = Declaration.FixedHoliday(
+        month = 9, day = 20, "Children Day",
+        validIn = setOf(GermanFederalStates.TH.name), validFromYear = 2019
+    )
+    val reformationDay = Declaration.FixedHoliday(
+        month = 10, day = 31, "Reformation Day",
         validIn = setOf(
             GermanFederalStates.BW.name,
             GermanFederalStates.MV.name,
             GermanFederalStates.SN.name,
             GermanFederalStates.ST.name,
             GermanFederalStates.TH.name
-        ))
-    val reformationDay2018 = Declaration.FixedHoliday(month = 10, day = 31, "Reformation Day - Since 2018",
+        )
+    )
+    val reformationDay2018 = Declaration.FixedHoliday(
+        month = 10, day = 31, "Reformation Day - Since 2018",
         validIn = setOf(
             GermanFederalStates.HB.name,
             GermanFederalStates.HH.name,
             GermanFederalStates.NI.name,
             GermanFederalStates.SH.name
-        ), validFromYear = 2018)
-    val allSaintsDay = Declaration.FixedHoliday(month = 11, day = 1, "All Saints Day",
+        ), validFromYear = 2018
+    )
+    val allSaintsDay = Declaration.FixedHoliday(
+        month = 11, day = 1, "All Saints Day",
         validIn = setOf(
             GermanFederalStates.BW.name,
             GermanFederalStates.BY.name,
@@ -87,11 +111,14 @@ class GermanHolidayDeclarations: HolidayDeclarations("DE") {
             GermanFederalStates.NW.name,
             GermanFederalStates.RP.name,
             GermanFederalStates.SL.name
-        ))
-    val repentanceAndPrayerDay = Declaration.AdventBasedHoliday(offset = -11, name = "Repentance And Prayer Day",
+        )
+    )
+    val repentanceAndPrayerDay = Declaration.AdventBasedHoliday(
+        offset = -11, name = "Repentance And Prayer Day",
         validIn = setOf(
             GermanFederalStates.SN.name
-        ))
+        )
+    )
 
     override fun declarations(): List<Declaration> {
         return buildList {
