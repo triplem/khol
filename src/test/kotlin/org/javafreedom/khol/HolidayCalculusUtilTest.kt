@@ -1,8 +1,8 @@
 package org.javafreedom.khol
 
 import kotlinx.datetime.number
-import org.javafreedom.khol.HolidayCalculusUtil.Companion.firstAdvent
-import org.javafreedom.khol.HolidayCalculusUtil.Companion.gregorianEasterSunday
+import org.javafreedom.khol.HolidayCalculusUtil.firstAdvent
+import org.javafreedom.khol.HolidayCalculusUtil.gregorianEasterSunday
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

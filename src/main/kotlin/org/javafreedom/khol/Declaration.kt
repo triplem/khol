@@ -48,10 +48,6 @@ sealed class Declaration(open val name: String,
     }
 }
 
-abstract class HolidayDeclarations(val country: String) {
+abstract class HolidayDeclarations(val validIn: String) {
     abstract fun declarations(): List<Declaration>
 }
-
-
-
-
