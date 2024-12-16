@@ -1,7 +1,7 @@
 import com.vanniktech.maven.publish.SonatypeHost
 
 plugins {
-    kotlin("jvm") version "2.0.21"
+    kotlin("jvm") version "2.1.0"
 
     id("com.vanniktech.maven.publish") version "0.30.0"
     id("io.gitlab.arturbosch.detekt") version "1.23.7"
