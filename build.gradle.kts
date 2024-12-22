@@ -88,3 +88,30 @@ sonarqube {
             project.layout.buildDirectory.file("reports/kover/report.xml").get().asFile)
     }
 }
+
+tasks.register("prepareDocs") {
+    group = "documentation"
+    description = "Prepare GitHub Pages documentation."
+
+    dependsOn(tasks.dokkaGeneratePublicationHtml, tasks.koverHtmlReport, tasks.test)
+
+    val outputDir = project.layout.projectDirectory.dir("docs")
+    doLast {
+        copy {
+            from(tasks.dokkaGeneratePublicationHtml.get().outputDirectory)
+            into(outputDir.dir("dokka"))
+        }
+        copy {
+            from(project.layout.buildDirectory.dir("reports/kover/html"))
+            into(outputDir.dir("kover"))
+        }
+        copy {
+            from(project.layout.buildDirectory.dir("reports/detekt"))
+            into(outputDir.dir("detekt"))
+        }
+        copy {
+            from(project.layout.buildDirectory.dir("reports/tests/test"))
+            into(outputDir.dir("tests"))
+        }
+    }
+}

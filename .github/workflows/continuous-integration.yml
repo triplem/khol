@@ -75,14 +75,22 @@ jobs:
             ['@semantic-release/github', '@semantic-release/exec']
           plugins: |
             [
-              '@semantic-release/commit-analyzer', 
-              '@semantic-release/release-notes-generator', 
+              '@semantic-release/commit-analyzer',
+              '@semantic-release/release-notes-generator',
               '@semantic-release/github'
             ]
         id: semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Build and generate documentation
+        run: ./gradlew prepareDocs --no-configuration-cache
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
 
   dependency-submission:
     runs-on: ubuntu-latest
