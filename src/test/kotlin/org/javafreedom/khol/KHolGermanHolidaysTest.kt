@@ -7,36 +7,53 @@ import kotlin.test.assertContains
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 
-
 class KHolGermanHolidaysTest {
 
     @Test
-    fun kholTestNW2024() {
+    fun northrhineContainsReformationDay() {
         val sut = KHol(GermanHolidayDeclarations(), 2024, "NW")
 
-        val validHoldays = sut.validHolidays()
+        val validHolidays = sut.validHolidays()
 
-        assertEquals(11, validHoldays.size)
-        assertContains(validHoldays, LocalDate.parse("2024-11-01"))
+        assertEquals(11, validHolidays.size)
+        assertContains(validHolidays, LocalDate.parse("2024-11-01"))
     }
 
     @Test
-    fun kholTestHE2024() {
+    fun hessenDoesNotContainReformationDay() {
         val sut = KHol(GermanHolidayDeclarations(), 2024, "HE")
 
-        val validHoldays = sut.validHolidays()
+        val validHolidays = sut.validHolidays()
 
-        assertEquals(10, validHoldays.size)
-        assertFalse { validHoldays.contains(LocalDate.parse("2024-11-01")) }
+        assertEquals(10, validHolidays.size)
+        assertFalse { validHolidays.contains(LocalDate.parse("2024-11-01")) }
     }
 
     @Test
-    fun kholTestHE1989() {
+    fun thereAreNoDefinedHolidaysBefore1990() {
         val sut = KHol(GermanHolidayDeclarations(), 1989, "HE")
 
-        val validHoldays = sut.validHolidays()
+        val validHolidays = sut.validHolidays()
 
-        assertEquals(0, validHoldays.size)
+        assertEquals(0, validHolidays.size)
+    }
+
+    @Test
+    fun bremenHolidaysBefore2018WithoutReformationDay() {
+        val sut = KHol(GermanHolidayDeclarations(), 2017, "HB")
+
+        val validHolidays = sut.validHolidays()
+
+        assertEquals(9, validHolidays.size)
+    }
+
+    @Test
+    fun bremenHolidays2018WithReformationDay() {
+        val sut = KHol(GermanHolidayDeclarations(), 2018, "HB")
+
+        val validHolidays = sut.validHolidays()
+
+        assertEquals(10, validHolidays.size)
     }
 
 }
