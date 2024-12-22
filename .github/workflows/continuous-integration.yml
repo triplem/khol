@@ -2,9 +2,12 @@ name: CI Build
 
 on:
   push:
-    branches: [ 'main' ]
+    branches:
+      - 'main'
+      - 'feature/**'
   pull_request:
-    branches: [ 'main' ]
+    branches:
+      - 'main'
 
 jobs:
   build:
@@ -85,6 +88,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
+    if: github.ref == 'refs/heads/main'
 
     steps:
       - uses: actions/checkout@v4
