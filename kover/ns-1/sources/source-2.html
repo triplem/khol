@@ -1,0 +1,195 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>khol Coverage Report > HolidayCalculusUtil</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope: khol<span class="separator">|</span>    <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.javafreedom.khol</a>
+</div>
+
+<h1>Coverage Summary for Class: HolidayCalculusUtil (org.javafreedom.khol)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">HolidayCalculusUtil</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (22/22)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (142/142)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;@file:Suppress(&quot;detekt:style:MagicNumber&quot;)
+&nbsp;
+&nbsp;package org.javafreedom.khol
+&nbsp;
+&nbsp;import kotlinx.datetime.DateTimeUnit
+&nbsp;import kotlinx.datetime.DayOfWeek
+&nbsp;import kotlinx.datetime.LocalDate
+&nbsp;import kotlinx.datetime.plus
+&nbsp;
+&nbsp;object HolidayCalculusUtil {
+&nbsp;    /**
+&nbsp;     * Computus algoritym
+&nbsp;     */
+&nbsp;    fun gregorianEasterSunday(year: Int) : LocalDate {
+&nbsp;        // Golden number (position of the year in the 19-year Metonic cycle)
+<b class="fc">&nbsp;        val goldenNumber = year % 19</b>
+&nbsp;
+&nbsp;        // Century (the century the year falls in)
+<b class="fc">&nbsp;        val century = year / 100</b>
+&nbsp;
+&nbsp;        // Year within the century
+<b class="fc">&nbsp;        val yearInCentury = year % 100</b>
+&nbsp;
+&nbsp;        // Number of leap years in the century
+<b class="fc">&nbsp;        val leapYearsInCentury = century / 4</b>
+&nbsp;
+&nbsp;        // Remainder when dividing century by 4 (used for correction)
+<b class="fc">&nbsp;        val centuryRemainder = century % 4</b>
+&nbsp;
+&nbsp;        // Adjustment factor for the century based on an offset
+<b class="fc">&nbsp;        val centuryAdjustment = (century + 8) / 25</b>
+&nbsp;
+&nbsp;        // Correction for the century’s alignment with the lunar-solar cycle
+<b class="fc">&nbsp;        val centuryCycleCorrection = (century - centuryAdjustment + 1) / 3</b>
+&nbsp;
+&nbsp;        // Days after March 21 that Easter Sunday could fall
+<b class="fc">&nbsp;        val daysAfterEquinox = (19 * goldenNumber + century</b>
+<b class="fc">&nbsp;                - leapYearsInCentury - centuryCycleCorrection + 15) % 30</b>
+&nbsp;
+&nbsp;        // Leap years in the current century (for finer adjustments)
+<b class="fc">&nbsp;        val leapYearsInYear = yearInCentury / 4</b>
+&nbsp;
+&nbsp;        // Remainder when dividing yearInCentury by 4
+<b class="fc">&nbsp;        val yearInCenturyRemainder = yearInCentury % 4</b>
+&nbsp;
+&nbsp;        // Additional adjustment based on leap years and the cycle corrections
+<b class="fc">&nbsp;        val finalAdjustment = (32 + 2 * centuryRemainder + 2</b>
+<b class="fc">&nbsp;                * leapYearsInYear - daysAfterEquinox - yearInCenturyRemainder) % 7</b>
+&nbsp;
+&nbsp;        // Final correction factor for the lunar cycle
+<b class="fc">&nbsp;        val lunarCycleCorrection = (goldenNumber + 11 * daysAfterEquinox + 22</b>
+<b class="fc">&nbsp;                * finalAdjustment) / 451</b>
+&nbsp;
+&nbsp;        // Determine the month of Easter (March or April)
+<b class="fc">&nbsp;        val month = (daysAfterEquinox + finalAdjustment - 7 * lunarCycleCorrection + 114) / 31</b>
+&nbsp;
+&nbsp;        // Determine the day of Easter Sunday
+<b class="fc">&nbsp;        val day = ((daysAfterEquinox + finalAdjustment - 7 * lunarCycleCorrection + 114) % 31) + 1</b>
+&nbsp;
+&nbsp;        // Return the calculated date of Easter Sunday
+<b class="fc">&nbsp;        return LocalDate(year, month, day)</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    fun firstAdvent(year: Int): LocalDate {
+&nbsp;        // Find November 30th of the given year
+<b class="fc">&nbsp;        val november30 = LocalDate(year, 11, 30)</b>
+&nbsp;        // Get the day of the week for November 30th
+<b class="fc">&nbsp;        val dayOfWeek = november30.dayOfWeek</b>
+&nbsp;        // Calculate how many days to add to get to the nearest Sunday (Advent starts)
+<b class="fc">&nbsp;        val daysToSunday = (DayOfWeek.SUNDAY.value - dayOfWeek.value + 7) % 7</b>
+&nbsp;        // The first Advent Sunday is the Sunday closest to or on November 30th
+<b class="fc">&nbsp;        return november30.plus(daysToSunday, DateTimeUnit.DAY)</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-23 12:33</div>
+</div>
+</body>
+</html>
