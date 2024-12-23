@@ -3,6 +3,15 @@
 
 # khol
 
-A pure kotlin implementation for the Holiday Calculation.
+A kotlin implementation for the caluclation of Holidays.
+
+## Usage
+
+The central entry point is the class KHol, which has to be constructed with HolidayDeclarations. These declarations 
+are usually constructed based on Countries (eg. Germany or Belgium). 
 
 https://central.sonatype.org/publish/requirements/gpg/#signing-a-file
+
+
+https://central.sonatype.com/artifact/org.javafreedom/khol
+pkg:maven/org.javafreedom/khol@1.0.1
