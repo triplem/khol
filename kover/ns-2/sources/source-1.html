@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>khol Coverage Report > GermanFederalStates</title>
+  <title>khol Coverage Report > FirstAdvent</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,10 +19,10 @@
 <div class="breadCrumbs">
 Current scope: khol<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">org.javafreedom.khol.declarations</a>
+    <a href="../index.html">org.javafreedom.khol.algorithm</a>
 </div>
 
-<h1>Coverage Summary for Class: GermanFederalStates (org.javafreedom.khol.declarations)</h1>
+<h1>Coverage Summary for Class: FirstAdvent (org.javafreedom.khol.algorithm)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -49,38 +49,38 @@ Current scope: khol<span class="separator">|</span>    <a href="../../index.html
 </th>
 </tr>
 <tr>
-  <td class="name">GermanFederalStates</td>
+  <td class="name">FirstAdvent</td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
+    (1/1)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/2)
+    (2/2)
   </span>
 </td>
     <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/18)
+    (5/5)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/134)
+    (28/28)
   </span>
 </td>
 </tr>
@@ -93,142 +93,27 @@ Current scope: khol<span class="separator">|</span>    <a href="../../index.html
 
 <pre>
 <code class="sourceCode" id="sourceCode">&nbsp;@file:Suppress(&quot;detekt:style:MagicNumber&quot;)
+&nbsp;package org.javafreedom.khol.algorithm
 &nbsp;
-&nbsp;package org.javafreedom.khol.declarations
+&nbsp;import kotlinx.datetime.DayOfWeek
+&nbsp;import kotlinx.datetime.DateTimeUnit
+&nbsp;import kotlinx.datetime.LocalDate
+&nbsp;import kotlinx.datetime.plus
+&nbsp;import org.javafreedom.khol.BaseCalculationAlgorithm
 &nbsp;
-&nbsp;import org.javafreedom.khol.Declaration
-&nbsp;import org.javafreedom.khol.HolidayDeclarations
+<b class="fc">&nbsp;class FirstAdvent : BaseCalculationAlgorithm {</b>
 &nbsp;
-<b class="nc">&nbsp;enum class GermanFederalStates(val description: String) {</b>
-<b class="nc">&nbsp;    BW(&quot;Baden-Wuerttemberg&quot;),</b>
-<b class="nc">&nbsp;    BY(&quot;Bavaria&quot;),</b>
-<b class="nc">&nbsp;    BY_A(&quot;Bavaria (Augsburg)&quot;), // this is an exception, it is not a Federal State, but a more specific location</b>
-<b class="nc">&nbsp;    BE(&quot;Berlin&quot;),</b>
-<b class="nc">&nbsp;    BB(&quot;Brandenburg&quot;),</b>
-<b class="nc">&nbsp;    HB(&quot;Bremen&quot;),</b>
-<b class="nc">&nbsp;    HH(&quot;Hamburg&quot;),</b>
-<b class="nc">&nbsp;    HE(&quot;Hesse&quot;),</b>
-<b class="nc">&nbsp;    MV(&quot;Mecklenburg-West Pomerania&quot;),</b>
-<b class="nc">&nbsp;    NI(&quot;Lower Saxony&quot;),</b>
-<b class="nc">&nbsp;    NW(&quot;Mecklenburg-West Pomerania&quot;),</b>
-<b class="nc">&nbsp;    RP(&quot;Rhineland-Palatinate&quot;),</b>
-<b class="nc">&nbsp;    SL(&quot;Saarland&quot;),</b>
-<b class="nc">&nbsp;    SN(&quot;Saxony&quot;),</b>
-<b class="nc">&nbsp;    ST(&quot;Saxony-Anhalt&quot;),</b>
-<b class="nc">&nbsp;    SH(&quot;Schleswig-Holstein&quot;),</b>
-<b class="nc">&nbsp;    TH(&quot;Thuringia&quot;)</b>
-&nbsp;}
-&nbsp;
-&nbsp;// this is a defintion without DSL
-&nbsp;class GermanHolidayDeclarations: HolidayDeclarations(&quot;DE&quot;) {
-&nbsp;
-&nbsp;    val commonGermanHolidays = listOf(
-&nbsp;        Declaration.FixedHoliday(month = 1, day = 1, name = &quot;New Year&quot;),
-&nbsp;        Declaration.EasterBasedHoliday(offset = -2, name = &quot;Good Friday&quot;),
-&nbsp;        Declaration.EasterBasedHoliday(offset = 1, name = &quot;Easter Monday&quot;),
-&nbsp;        Declaration.FixedHoliday(month = 5, day = 1, name = &quot;Labour Day&quot;),
-&nbsp;        Declaration.EasterBasedHoliday(offset = 39, name = &quot;Ascension Day&quot;),
-&nbsp;        Declaration.EasterBasedHoliday(offset = 50, name = &quot;Whit Monday&quot;),
-&nbsp;        Declaration.FixedHoliday(month = 10, day = 3, name = &quot;German Unity Day&quot;),
-&nbsp;
-&nbsp;        Declaration.FixedHoliday(month = 12, day = 25, name = &quot;Christmas Day&quot;),
-&nbsp;        Declaration.FixedHoliday(month = 12, day = 26, name = &quot;Second Day of Christmas&quot;)
-&nbsp;    )
-&nbsp;
-&nbsp;    val epiphany = Declaration.FixedHoliday(
-&nbsp;        month = 1, day = 6, &quot;Epiphany&quot;,
-&nbsp;        validIn = setOf(
-&nbsp;            GermanFederalStates.BW.name,
-&nbsp;            GermanFederalStates.BY.name,
-&nbsp;            GermanFederalStates.BY_A.name,
-&nbsp;            GermanFederalStates.ST.name
-&nbsp;        )
-&nbsp;    )
-&nbsp;    val womensDay = Declaration.FixedHoliday(
-&nbsp;        month = 3, day = 8, &quot;International Womens Day&quot;,
-&nbsp;        validIn = setOf(
-&nbsp;            GermanFederalStates.BE.name,
-&nbsp;            GermanFederalStates.MV.name
-&nbsp;        )
-&nbsp;    )
-&nbsp;    val corpusChristi = Declaration.EasterBasedHoliday(
-&nbsp;        60, &quot;Corpus Christi&quot;,
-&nbsp;        validIn = setOf(
-&nbsp;            GermanFederalStates.BW.name,
-&nbsp;            GermanFederalStates.BY.name,
-&nbsp;            GermanFederalStates.HE.name,
-&nbsp;            GermanFederalStates.NW.name,
-&nbsp;            GermanFederalStates.RP.name,
-&nbsp;            GermanFederalStates.SL.name
-&nbsp;        )
-&nbsp;    )
-&nbsp;    val augsburgHighPeaceDay = Declaration.FixedHoliday(
-&nbsp;        month = 8, day = 8, &quot;Augsburg High Peace&quot;,
-&nbsp;        validIn = setOf(GermanFederalStates.BY_A.name)
-&nbsp;    )
-&nbsp;    val assumptionDay = Declaration.FixedHoliday(
-&nbsp;        month = 8, day = 15, &quot;Assumption Day&quot;,
-&nbsp;        validIn = setOf(
-&nbsp;            GermanFederalStates.BY.name,
-&nbsp;            GermanFederalStates.BY_A.name
-&nbsp;        )
-&nbsp;    )
-&nbsp;    val childrenDay = Declaration.FixedHoliday(
-&nbsp;        month = 9, day = 20, &quot;Children Day&quot;,
-&nbsp;        validIn = setOf(GermanFederalStates.TH.name), validFromYear = 2019
-&nbsp;    )
-&nbsp;    val reformationDay = Declaration.FixedHoliday(
-&nbsp;        month = 10, day = 31, &quot;Reformation Day&quot;,
-&nbsp;        validIn = setOf(
-&nbsp;            GermanFederalStates.BW.name,
-&nbsp;            GermanFederalStates.MV.name,
-&nbsp;            GermanFederalStates.SN.name,
-&nbsp;            GermanFederalStates.ST.name,
-&nbsp;            GermanFederalStates.TH.name
-&nbsp;        )
-&nbsp;    )
-&nbsp;    val reformationDay2018 = Declaration.FixedHoliday(
-&nbsp;        month = 10, day = 31, &quot;Reformation Day - Since 2018&quot;,
-&nbsp;        validIn = setOf(
-&nbsp;            GermanFederalStates.HB.name,
-&nbsp;            GermanFederalStates.HH.name,
-&nbsp;            GermanFederalStates.NI.name,
-&nbsp;            GermanFederalStates.SH.name
-&nbsp;        ), validFromYear = 2018
-&nbsp;    )
-&nbsp;    val allSaintsDay = Declaration.FixedHoliday(
-&nbsp;        month = 11, day = 1, &quot;All Saints Day&quot;,
-&nbsp;        validIn = setOf(
-&nbsp;            GermanFederalStates.BW.name,
-&nbsp;            GermanFederalStates.BY.name,
-&nbsp;            GermanFederalStates.BY_A.name,
-&nbsp;            GermanFederalStates.NW.name,
-&nbsp;            GermanFederalStates.RP.name,
-&nbsp;            GermanFederalStates.SL.name
-&nbsp;        )
-&nbsp;    )
-&nbsp;    val repentanceAndPrayerDay = Declaration.AdventBasedHoliday(
-&nbsp;        offset = -11, name = &quot;Repentance And Prayer Day&quot;,
-&nbsp;        validIn = setOf(
-&nbsp;            GermanFederalStates.SN.name
-&nbsp;        )
-&nbsp;    )
-&nbsp;
-&nbsp;    override fun declarations(): List&lt;Declaration&gt; {
-&nbsp;        return buildList {
-&nbsp;            addAll(commonGermanHolidays)
-&nbsp;            add(epiphany)
-&nbsp;            add(womensDay)
-&nbsp;            add(corpusChristi)
-&nbsp;            add(augsburgHighPeaceDay)
-&nbsp;            add(assumptionDay)
-&nbsp;            add(childrenDay)
-&nbsp;            add(reformationDay)
-&nbsp;            add(reformationDay2018)
-&nbsp;            add(allSaintsDay)
-&nbsp;            add(repentanceAndPrayerDay)
-&nbsp;        }
+&nbsp;    override fun calculateBaseDate(year: Int): LocalDate {
+&nbsp;        // Find November 30th of the given year
+<b class="fc">&nbsp;        val november30 = LocalDate(year, 11, 30)</b>
+&nbsp;        // Get the day of the week for November 30th
+<b class="fc">&nbsp;        val dayOfWeek = november30.dayOfWeek</b>
+&nbsp;        // Calculate how many days to add to get to the nearest Sunday (Advent starts)
+<b class="fc">&nbsp;        val daysToSunday = (DayOfWeek.SUNDAY.value - dayOfWeek.value + 7) % 7</b>
+&nbsp;        // The first Advent Sunday is the Sunday closest to or on November 30th
+<b class="fc">&nbsp;        return november30.plus(daysToSunday, DateTimeUnit.DAY)</b>
 &nbsp;    }
+&nbsp;
 &nbsp;}
 </code>
 </pre>
@@ -253,7 +138,7 @@ Current scope: khol<span class="separator">|</span>    <a href="../../index.html
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2024-12-23 12:33</div>
+    <div style="float:right;">generated on 2024-12-23 20:35</div>
 </div>
 </body>
 </html>

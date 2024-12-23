@@ -1,5 +1,12 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
+$dokka.location:org.javafreedom.khol.algorithm////PointingToDeclaration/khol/org.javafreedom.khol.algorithm/index.html
+$dokka.location:org.javafreedom.khol.algorithm/FirstAdvent///PointingToDeclaration/khol/org.javafreedom.khol.algorithm/-first-advent/index.html
+$dokka.location:org.javafreedom.khol.algorithm/FirstAdvent/FirstAdvent/#/PointingToDeclaration/khol/org.javafreedom.khol.algorithm/-first-advent/-first-advent.html
+$dokka.location:org.javafreedom.khol.algorithm/FirstAdvent/calculateBaseDate/#kotlin.Int/PointingToDeclaration/khol/org.javafreedom.khol.algorithm/-first-advent/calculate-base-date.html
+$dokka.location:org.javafreedom.khol.algorithm/GregorianEasterSundayGauss///PointingToDeclaration/khol/org.javafreedom.khol.algorithm/-gregorian-easter-sunday-gauss/index.html
+$dokka.location:org.javafreedom.khol.algorithm/GregorianEasterSundayGauss/GregorianEasterSundayGauss/#/PointingToDeclaration/khol/org.javafreedom.khol.algorithm/-gregorian-easter-sunday-gauss/-gregorian-easter-sunday-gauss.html
+$dokka.location:org.javafreedom.khol.algorithm/GregorianEasterSundayGauss/calculateBaseDate/#kotlin.Int/PointingToDeclaration/khol/org.javafreedom.khol.algorithm/-gregorian-easter-sunday-gauss/calculate-base-date.html
 $dokka.location:org.javafreedom.khol.declarations////PointingToDeclaration/khol/org.javafreedom.khol.declarations/index.html
 $dokka.location:org.javafreedom.khol.declarations/GermanFederalStates.BB///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}khol/org.javafreedom.khol.declarations/-german-federal-states/-b-b/index.html
 $dokka.location:org.javafreedom.khol.declarations/GermanFederalStates.BE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}khol/org.javafreedom.khol.declarations/-german-federal-states/-b-e/index.html
@@ -38,6 +45,8 @@ $dokka.location:org.javafreedom.khol.declarations/GermanHolidayDeclarations/refo
 $dokka.location:org.javafreedom.khol.declarations/GermanHolidayDeclarations/repentanceAndPrayerDay/#/PointingToDeclaration/khol/org.javafreedom.khol.declarations/-german-holiday-declarations/repentance-and-prayer-day.html
 $dokka.location:org.javafreedom.khol.declarations/GermanHolidayDeclarations/womensDay/#/PointingToDeclaration/khol/org.javafreedom.khol.declarations/-german-holiday-declarations/womens-day.html
 $dokka.location:org.javafreedom.khol////PointingToDeclaration/khol/org.javafreedom.khol/index.html
+$dokka.location:org.javafreedom.khol/BaseCalculationAlgorithm///PointingToDeclaration/khol/org.javafreedom.khol/-base-calculation-algorithm/index.html
+$dokka.location:org.javafreedom.khol/BaseCalculationAlgorithm/calculateBaseDate/#kotlin.Int/PointingToDeclaration/khol/org.javafreedom.khol/-base-calculation-algorithm/calculate-base-date.html
 $dokka.location:org.javafreedom.khol/Declaration.AdventBasedHoliday///PointingToDeclaration/khol/org.javafreedom.khol/-declaration/-advent-based-holiday/index.html
 $dokka.location:org.javafreedom.khol/Declaration.AdventBasedHoliday/AdventBasedHoliday/#kotlin.Int#kotlin.String#kotlin.Int#kotlin.collections.Set[kotlin.String]/PointingToDeclaration/khol/org.javafreedom.khol/-declaration/-advent-based-holiday/-advent-based-holiday.html
 $dokka.location:org.javafreedom.khol/Declaration.AdventBasedHoliday/concreteForYear/#kotlin.Int/PointingToDeclaration/khol/org.javafreedom.khol/-declaration/-advent-based-holiday/concrete-for-year.html
@@ -65,9 +74,6 @@ $dokka.location:org.javafreedom.khol/Declaration/concreteForYear/#kotlin.Int/Poi
 $dokka.location:org.javafreedom.khol/Declaration/name/#/PointingToDeclaration/khol/org.javafreedom.khol/-declaration/name.html
 $dokka.location:org.javafreedom.khol/Declaration/validFromYear/#/PointingToDeclaration/khol/org.javafreedom.khol/-declaration/valid-from-year.html
 $dokka.location:org.javafreedom.khol/Declaration/validIn/#/PointingToDeclaration/khol/org.javafreedom.khol/-declaration/valid-in.html
-$dokka.location:org.javafreedom.khol/HolidayCalculusUtil///PointingToDeclaration/khol/org.javafreedom.khol/-holiday-calculus-util/index.html
-$dokka.location:org.javafreedom.khol/HolidayCalculusUtil/firstAdvent/#kotlin.Int/PointingToDeclaration/khol/org.javafreedom.khol/-holiday-calculus-util/first-advent.html
-$dokka.location:org.javafreedom.khol/HolidayCalculusUtil/gregorianEasterSunday/#kotlin.Int/PointingToDeclaration/khol/org.javafreedom.khol/-holiday-calculus-util/gregorian-easter-sunday.html
 $dokka.location:org.javafreedom.khol/HolidayDeclarations///PointingToDeclaration/khol/org.javafreedom.khol/-holiday-declarations/index.html
 $dokka.location:org.javafreedom.khol/HolidayDeclarations/HolidayDeclarations/#kotlin.String/PointingToDeclaration/khol/org.javafreedom.khol/-holiday-declarations/-holiday-declarations.html
 $dokka.location:org.javafreedom.khol/HolidayDeclarations/declarations/#/PointingToDeclaration/khol/org.javafreedom.khol/-holiday-declarations/declarations.html
@@ -79,4 +85,5 @@ $dokka.location:org.javafreedom.khol/KHol/validHolidays/#/PointingToDeclaration/
 $dokka.location:org.javafreedom.khol/KHol/validIn/#/PointingToDeclaration/khol/org.javafreedom.khol/-k-hol/valid-in.html
 $dokka.location:org.javafreedom.khol/KHol/year/#/PointingToDeclaration/khol/org.javafreedom.khol/-k-hol/year.html
 org.javafreedom.khol
+org.javafreedom.khol.algorithm
 org.javafreedom.khol.declarations

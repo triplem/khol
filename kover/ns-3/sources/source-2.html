@@ -1,0 +1,259 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>khol Coverage Report > GermanHolidayDeclarations</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope: khol<span class="separator">|</span>    <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.javafreedom.khol.declarations</a>
+</div>
+
+<h1>Coverage Summary for Class: GermanHolidayDeclarations (org.javafreedom.khol.declarations)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">GermanHolidayDeclarations</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (85/85)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (475/475)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;@file:Suppress(&quot;detekt:style:MagicNumber&quot;)
+&nbsp;
+&nbsp;package org.javafreedom.khol.declarations
+&nbsp;
+&nbsp;import org.javafreedom.khol.Declaration
+&nbsp;import org.javafreedom.khol.HolidayDeclarations
+&nbsp;
+&nbsp;enum class GermanFederalStates(val description: String) {
+&nbsp;    BW(&quot;Baden-Wuerttemberg&quot;),
+&nbsp;    BY(&quot;Bavaria&quot;),
+&nbsp;    BY_A(&quot;Bavaria (Augsburg)&quot;), // this is an exception, it is not a Federal State, but a more specific location
+&nbsp;    BE(&quot;Berlin&quot;),
+&nbsp;    BB(&quot;Brandenburg&quot;),
+&nbsp;    HB(&quot;Bremen&quot;),
+&nbsp;    HH(&quot;Hamburg&quot;),
+&nbsp;    HE(&quot;Hesse&quot;),
+&nbsp;    MV(&quot;Mecklenburg-West Pomerania&quot;),
+&nbsp;    NI(&quot;Lower Saxony&quot;),
+&nbsp;    NW(&quot;Mecklenburg-West Pomerania&quot;),
+&nbsp;    RP(&quot;Rhineland-Palatinate&quot;),
+&nbsp;    SL(&quot;Saarland&quot;),
+&nbsp;    SN(&quot;Saxony&quot;),
+&nbsp;    ST(&quot;Saxony-Anhalt&quot;),
+&nbsp;    SH(&quot;Schleswig-Holstein&quot;),
+&nbsp;    TH(&quot;Thuringia&quot;)
+&nbsp;}
+&nbsp;
+&nbsp;// this is a defintion without DSL
+<b class="fc">&nbsp;class GermanHolidayDeclarations: HolidayDeclarations(&quot;DE&quot;) {</b>
+&nbsp;
+<b class="fc">&nbsp;    val commonGermanHolidays = listOf(</b>
+<b class="fc">&nbsp;        Declaration.FixedHoliday(month = 1, day = 1, name = &quot;New Year&quot;),</b>
+<b class="fc">&nbsp;        Declaration.EasterBasedHoliday(offset = -2, name = &quot;Good Friday&quot;),</b>
+<b class="fc">&nbsp;        Declaration.EasterBasedHoliday(offset = 1, name = &quot;Easter Monday&quot;),</b>
+<b class="fc">&nbsp;        Declaration.FixedHoliday(month = 5, day = 1, name = &quot;Labour Day&quot;),</b>
+<b class="fc">&nbsp;        Declaration.EasterBasedHoliday(offset = 39, name = &quot;Ascension Day&quot;),</b>
+<b class="fc">&nbsp;        Declaration.EasterBasedHoliday(offset = 50, name = &quot;Whit Monday&quot;),</b>
+<b class="fc">&nbsp;        Declaration.FixedHoliday(month = 10, day = 3, name = &quot;German Unity Day&quot;),</b>
+&nbsp;
+<b class="fc">&nbsp;        Declaration.FixedHoliday(month = 12, day = 25, name = &quot;Christmas Day&quot;),</b>
+<b class="fc">&nbsp;        Declaration.FixedHoliday(month = 12, day = 26, name = &quot;Second Day of Christmas&quot;)</b>
+&nbsp;    )
+&nbsp;
+<b class="fc">&nbsp;    val epiphany = Declaration.FixedHoliday(</b>
+<b class="fc">&nbsp;        month = 1, day = 6, &quot;Epiphany&quot;,</b>
+<b class="fc">&nbsp;        validIn = setOf(</b>
+<b class="fc">&nbsp;            GermanFederalStates.BW.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.BY.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.BY_A.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.ST.name</b>
+&nbsp;        )
+&nbsp;    )
+<b class="fc">&nbsp;    val womensDay = Declaration.FixedHoliday(</b>
+<b class="fc">&nbsp;        month = 3, day = 8, &quot;International Womens Day&quot;,</b>
+<b class="fc">&nbsp;        validIn = setOf(</b>
+<b class="fc">&nbsp;            GermanFederalStates.BE.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.MV.name</b>
+&nbsp;        )
+&nbsp;    )
+<b class="fc">&nbsp;    val corpusChristi = Declaration.EasterBasedHoliday(</b>
+<b class="fc">&nbsp;        60, &quot;Corpus Christi&quot;,</b>
+<b class="fc">&nbsp;        validIn = setOf(</b>
+<b class="fc">&nbsp;            GermanFederalStates.BW.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.BY.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.HE.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.NW.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.RP.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.SL.name</b>
+&nbsp;        )
+&nbsp;    )
+<b class="fc">&nbsp;    val augsburgHighPeaceDay = Declaration.FixedHoliday(</b>
+<b class="fc">&nbsp;        month = 8, day = 8, &quot;Augsburg High Peace&quot;,</b>
+<b class="fc">&nbsp;        validIn = setOf(GermanFederalStates.BY_A.name)</b>
+&nbsp;    )
+<b class="fc">&nbsp;    val assumptionDay = Declaration.FixedHoliday(</b>
+<b class="fc">&nbsp;        month = 8, day = 15, &quot;Assumption Day&quot;,</b>
+<b class="fc">&nbsp;        validIn = setOf(</b>
+<b class="fc">&nbsp;            GermanFederalStates.BY.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.BY_A.name</b>
+&nbsp;        )
+&nbsp;    )
+<b class="fc">&nbsp;    val childrenDay = Declaration.FixedHoliday(</b>
+<b class="fc">&nbsp;        month = 9, day = 20, &quot;Children Day&quot;,</b>
+<b class="fc">&nbsp;        validIn = setOf(GermanFederalStates.TH.name), validFromYear = 2019</b>
+&nbsp;    )
+<b class="fc">&nbsp;    val reformationDay = Declaration.FixedHoliday(</b>
+<b class="fc">&nbsp;        month = 10, day = 31, &quot;Reformation Day&quot;,</b>
+<b class="fc">&nbsp;        validIn = setOf(</b>
+<b class="fc">&nbsp;            GermanFederalStates.BW.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.MV.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.SN.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.ST.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.TH.name</b>
+&nbsp;        )
+&nbsp;    )
+<b class="fc">&nbsp;    val reformationDay2018 = Declaration.FixedHoliday(</b>
+<b class="fc">&nbsp;        month = 10, day = 31, &quot;Reformation Day - Since 2018&quot;,</b>
+<b class="fc">&nbsp;        validIn = setOf(</b>
+<b class="fc">&nbsp;            GermanFederalStates.HB.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.HH.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.NI.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.SH.name</b>
+<b class="fc">&nbsp;        ), validFromYear = 2018</b>
+&nbsp;    )
+<b class="fc">&nbsp;    val allSaintsDay = Declaration.FixedHoliday(</b>
+<b class="fc">&nbsp;        month = 11, day = 1, &quot;All Saints Day&quot;,</b>
+<b class="fc">&nbsp;        validIn = setOf(</b>
+<b class="fc">&nbsp;            GermanFederalStates.BW.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.BY.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.BY_A.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.NW.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.RP.name,</b>
+<b class="fc">&nbsp;            GermanFederalStates.SL.name</b>
+&nbsp;        )
+&nbsp;    )
+<b class="fc">&nbsp;    val repentanceAndPrayerDay = Declaration.AdventBasedHoliday(</b>
+<b class="fc">&nbsp;        offset = -11, name = &quot;Repentance And Prayer Day&quot;,</b>
+<b class="fc">&nbsp;        validIn = setOf(</b>
+<b class="fc">&nbsp;            GermanFederalStates.SN.name</b>
+&nbsp;        )
+&nbsp;    )
+&nbsp;
+&nbsp;    override fun declarations(): List&lt;Declaration&gt; {
+<b class="fc">&nbsp;        return buildList {</b>
+<b class="fc">&nbsp;            addAll(commonGermanHolidays)</b>
+<b class="fc">&nbsp;            add(epiphany)</b>
+<b class="fc">&nbsp;            add(womensDay)</b>
+<b class="fc">&nbsp;            add(corpusChristi)</b>
+<b class="fc">&nbsp;            add(augsburgHighPeaceDay)</b>
+<b class="fc">&nbsp;            add(assumptionDay)</b>
+<b class="fc">&nbsp;            add(childrenDay)</b>
+<b class="fc">&nbsp;            add(reformationDay)</b>
+<b class="fc">&nbsp;            add(reformationDay2018)</b>
+<b class="fc">&nbsp;            add(allSaintsDay)</b>
+<b class="fc">&nbsp;            add(repentanceAndPrayerDay)</b>
+<b class="fc">&nbsp;        }</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-23 20:35</div>
+</div>
+</body>
+</html>
