@@ -3,6 +3,8 @@ package org.javafreedom.khol
 import kotlinx.datetime.DateTimeUnit
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.plus
+import org.javafreedom.khol.algorithm.FirstAdvent
+import org.javafreedom.khol.algorithm.GregorianEasterSundayGauss
 
 sealed class Declaration(open val name: String,
                          open val validFromYear: Int,
@@ -28,8 +30,10 @@ sealed class Declaration(open val name: String,
         override val validIn: Set<String> = emptySet()
     ) : Declaration(name, validFromYear, validIn) {
 
+        private val gregorianEasterSundayAlgorithm = GregorianEasterSundayGauss()
+
         override fun concreteForYear(year: Int): LocalDate {
-            val value = HolidayCalculusUtil.gregorianEasterSunday(year).plus(this.offset, DateTimeUnit.DAY)
+            val value = gregorianEasterSundayAlgorithm.calculateBaseDate(year).plus(this.offset, DateTimeUnit.DAY)
             return LocalDate(year, value.month, value.dayOfMonth)
         }
     }
@@ -41,8 +45,10 @@ sealed class Declaration(open val name: String,
         override val validIn: Set<String> = emptySet()
     ) : Declaration(name, validFromYear, validIn) {
 
+        private val firstAdventAlgorithm = FirstAdvent()
+
         override fun concreteForYear(year: Int): LocalDate {
-            val value = HolidayCalculusUtil.firstAdvent(year).plus(this.offset, DateTimeUnit.DAY)
+            val value = firstAdventAlgorithm.calculateBaseDate(year).plus(this.offset, DateTimeUnit.DAY)
             return LocalDate(year, value.month, value.dayOfMonth)
         }
     }
