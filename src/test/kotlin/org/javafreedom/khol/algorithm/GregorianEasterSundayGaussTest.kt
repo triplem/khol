@@ -1,10 +1,9 @@
 package org.javafreedom.khol.algorithm
 
+import EasterCalculusArguments
 import kotlinx.datetime.number
 import kotlin.test.Test
 import kotlin.test.assertEquals
-
-private data class EasterCalculusArguments(val year: Int, val month: Int, val day: Int)
 
 class GregorianEasterSundayGaussTest {
 

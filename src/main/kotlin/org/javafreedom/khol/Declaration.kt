@@ -5,6 +5,7 @@ import kotlinx.datetime.LocalDate
 import kotlinx.datetime.plus
 import org.javafreedom.khol.algorithm.FirstAdvent
 import org.javafreedom.khol.algorithm.GregorianEasterSundayGauss
+import org.javafreedom.khol.algorithm.OrthodoxEaster
 
 sealed class Declaration(open val name: String,
                          open val validFromYear: Int,
@@ -34,6 +35,21 @@ sealed class Declaration(open val name: String,
 
         override fun concreteForYear(year: Int): LocalDate {
             val value = gregorianEasterSundayAlgorithm.calculateBaseDate(year).plus(this.offset, DateTimeUnit.DAY)
+            return LocalDate(year, value.month, value.dayOfMonth)
+        }
+    }
+
+    data class OrthodoxEasterBasedHoliday(
+        val offset: Int,
+        override val name: String,
+        override val validFromYear: Int = 1990,
+        override val validIn: Set<String> = emptySet()
+    ) : Declaration(name, validFromYear, validIn) {
+
+        private val orthodoxEaster = OrthodoxEaster()
+
+        override fun concreteForYear(year: Int): LocalDate {
+            val value = orthodoxEaster.calculateBaseDate(year).plus(this.offset, DateTimeUnit.DAY)
             return LocalDate(year, value.month, value.dayOfMonth)
         }
     }
