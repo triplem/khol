@@ -17,12 +17,15 @@ plugins {
 group = "org.javafreedom"
 project.version = project.findProperty("version") as String? ?: "0.0.1-SNAPSHOT"
 
+val kotlinxDatetimeVersion = "0.6.1"
+val konsistVersion = "0.17.3"
+
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:${kotlinxDatetimeVersion}")
 
     testImplementation(kotlin("test"))
 
-    testImplementation("com.lemonappdev:konsist:0.17.3")
+    testImplementation("com.lemonappdev:konsist:${konsistVersion}")
 }
 
 tasks.test {
@@ -41,7 +44,7 @@ val version: String by lazy {
 mavenPublishing {
     println("Using Version: ${version}")
 
-    coordinates(group.toString(), rootProject.name, version)
+    coordinates(groupId = group.toString(), artifactId = rootProject.name, version = version)
 
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
