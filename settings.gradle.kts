@@ -26,4 +26,3 @@ plugins {
 }
 
 rootProject.name = "khol"
-
