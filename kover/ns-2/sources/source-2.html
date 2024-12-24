@@ -98,58 +98,49 @@ Current scope: khol<span class="separator">|</span>    <a href="../../index.html
 &nbsp;import kotlinx.datetime.LocalDate
 &nbsp;import org.javafreedom.khol.BaseCalculationAlgorithm
 &nbsp;
+&nbsp;/**
+&nbsp; * Calculates Easter Sunday for a given year using the algorithm by Carl Friedrich Gauss.
+&nbsp; *
+&nbsp; * This algorithm determines the date of Easter Sunday according to the rules
+&nbsp; * of the Western Christian Church, which follows the Gregorian calendar.
+&nbsp; */
 <b class="fc">&nbsp;class GregorianEasterSundayGauss : BaseCalculationAlgorithm {</b>
 &nbsp;
 &nbsp;    override fun calculateBaseDate(year: Int): LocalDate {
 &nbsp;        // Golden number (position of the year in the 19-year Metonic cycle)
 <b class="fc">&nbsp;        val goldenNumber = year % 19</b>
-&nbsp;
 &nbsp;        // Century (the century the year falls in)
 <b class="fc">&nbsp;        val century = year / 100</b>
-&nbsp;
 &nbsp;        // Year within the century
 <b class="fc">&nbsp;        val yearInCentury = year % 100</b>
-&nbsp;
 &nbsp;        // Number of leap years in the century
 <b class="fc">&nbsp;        val leapYearsInCentury = century / 4</b>
-&nbsp;
 &nbsp;        // Remainder when dividing century by 4 (used for correction)
 <b class="fc">&nbsp;        val centuryRemainder = century % 4</b>
-&nbsp;
 &nbsp;        // Adjustment factor for the century based on an offset
 <b class="fc">&nbsp;        val centuryAdjustment = (century + 8) / 25</b>
-&nbsp;
 &nbsp;        // Correction for the century’s alignment with the lunar-solar cycle
 <b class="fc">&nbsp;        val centuryCycleCorrection = (century - centuryAdjustment + 1) / 3</b>
-&nbsp;
 &nbsp;        // Days after March 21 that Easter Sunday could fall
 <b class="fc">&nbsp;        val daysAfterEquinox = (19 * goldenNumber + century</b>
 <b class="fc">&nbsp;                - leapYearsInCentury - centuryCycleCorrection + 15) % 30</b>
-&nbsp;
 &nbsp;        // Leap years in the current century (for finer adjustments)
 <b class="fc">&nbsp;        val leapYearsInYear = yearInCentury / 4</b>
-&nbsp;
 &nbsp;        // Remainder when dividing yearInCentury by 4
 <b class="fc">&nbsp;        val yearInCenturyRemainder = yearInCentury % 4</b>
-&nbsp;
 &nbsp;        // Additional adjustment based on leap years and the cycle corrections
 <b class="fc">&nbsp;        val finalAdjustment = (32 + 2 * centuryRemainder + 2</b>
 <b class="fc">&nbsp;                * leapYearsInYear - daysAfterEquinox - yearInCenturyRemainder) % 7</b>
-&nbsp;
 &nbsp;        // Final correction factor for the lunar cycle
 <b class="fc">&nbsp;        val lunarCycleCorrection = (goldenNumber + 11 * daysAfterEquinox + 22</b>
 <b class="fc">&nbsp;                * finalAdjustment) / 451</b>
-&nbsp;
 &nbsp;        // Determine the month of Easter (March or April)
 <b class="fc">&nbsp;        val month = (daysAfterEquinox + finalAdjustment - 7 * lunarCycleCorrection + 114) / 31</b>
-&nbsp;
 &nbsp;        // Determine the day of Easter Sunday
 <b class="fc">&nbsp;        val day = ((daysAfterEquinox + finalAdjustment - 7 * lunarCycleCorrection + 114) % 31) + 1</b>
-&nbsp;
 &nbsp;        // Return the calculated date of Easter Sunday
 <b class="fc">&nbsp;        return LocalDate(year, month, day)</b>
 &nbsp;    }
-&nbsp;
 &nbsp;}
 </code>
 </pre>
@@ -174,7 +165,7 @@ Current scope: khol<span class="separator">|</span>    <a href="../../index.html
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2024-12-23 20:35</div>
+    <div style="float:right;">generated on 2024-12-24 20:03</div>
 </div>
 </body>
 </html>

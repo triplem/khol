@@ -7,6 +7,9 @@ $dokka.location:org.javafreedom.khol.algorithm/FirstAdvent/calculateBaseDate/#ko
 $dokka.location:org.javafreedom.khol.algorithm/GregorianEasterSundayGauss///PointingToDeclaration/khol/org.javafreedom.khol.algorithm/-gregorian-easter-sunday-gauss/index.html
 $dokka.location:org.javafreedom.khol.algorithm/GregorianEasterSundayGauss/GregorianEasterSundayGauss/#/PointingToDeclaration/khol/org.javafreedom.khol.algorithm/-gregorian-easter-sunday-gauss/-gregorian-easter-sunday-gauss.html
 $dokka.location:org.javafreedom.khol.algorithm/GregorianEasterSundayGauss/calculateBaseDate/#kotlin.Int/PointingToDeclaration/khol/org.javafreedom.khol.algorithm/-gregorian-easter-sunday-gauss/calculate-base-date.html
+$dokka.location:org.javafreedom.khol.algorithm/OrthodoxEaster///PointingToDeclaration/khol/org.javafreedom.khol.algorithm/-orthodox-easter/index.html
+$dokka.location:org.javafreedom.khol.algorithm/OrthodoxEaster/OrthodoxEaster/#/PointingToDeclaration/khol/org.javafreedom.khol.algorithm/-orthodox-easter/-orthodox-easter.html
+$dokka.location:org.javafreedom.khol.algorithm/OrthodoxEaster/calculateBaseDate/#kotlin.Int/PointingToDeclaration/khol/org.javafreedom.khol.algorithm/-orthodox-easter/calculate-base-date.html
 $dokka.location:org.javafreedom.khol.declarations////PointingToDeclaration/khol/org.javafreedom.khol.declarations/index.html
 $dokka.location:org.javafreedom.khol.declarations/GermanFederalStates.BB///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}khol/org.javafreedom.khol.declarations/-german-federal-states/-b-b/index.html
 $dokka.location:org.javafreedom.khol.declarations/GermanFederalStates.BE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}khol/org.javafreedom.khol.declarations/-german-federal-states/-b-e/index.html
@@ -69,6 +72,13 @@ $dokka.location:org.javafreedom.khol/Declaration.FixedHoliday/month/#/PointingTo
 $dokka.location:org.javafreedom.khol/Declaration.FixedHoliday/name/#/PointingToDeclaration/khol/org.javafreedom.khol/-declaration/-fixed-holiday/name.html
 $dokka.location:org.javafreedom.khol/Declaration.FixedHoliday/validFromYear/#/PointingToDeclaration/khol/org.javafreedom.khol/-declaration/-fixed-holiday/valid-from-year.html
 $dokka.location:org.javafreedom.khol/Declaration.FixedHoliday/validIn/#/PointingToDeclaration/khol/org.javafreedom.khol/-declaration/-fixed-holiday/valid-in.html
+$dokka.location:org.javafreedom.khol/Declaration.OrthodoxEasterBasedHoliday///PointingToDeclaration/khol/org.javafreedom.khol/-declaration/-orthodox-easter-based-holiday/index.html
+$dokka.location:org.javafreedom.khol/Declaration.OrthodoxEasterBasedHoliday/OrthodoxEasterBasedHoliday/#kotlin.Int#kotlin.String#kotlin.Int#kotlin.collections.Set[kotlin.String]/PointingToDeclaration/khol/org.javafreedom.khol/-declaration/-orthodox-easter-based-holiday/-orthodox-easter-based-holiday.html
+$dokka.location:org.javafreedom.khol/Declaration.OrthodoxEasterBasedHoliday/concreteForYear/#kotlin.Int/PointingToDeclaration/khol/org.javafreedom.khol/-declaration/-orthodox-easter-based-holiday/concrete-for-year.html
+$dokka.location:org.javafreedom.khol/Declaration.OrthodoxEasterBasedHoliday/name/#/PointingToDeclaration/khol/org.javafreedom.khol/-declaration/-orthodox-easter-based-holiday/name.html
+$dokka.location:org.javafreedom.khol/Declaration.OrthodoxEasterBasedHoliday/offset/#/PointingToDeclaration/khol/org.javafreedom.khol/-declaration/-orthodox-easter-based-holiday/offset.html
+$dokka.location:org.javafreedom.khol/Declaration.OrthodoxEasterBasedHoliday/validFromYear/#/PointingToDeclaration/khol/org.javafreedom.khol/-declaration/-orthodox-easter-based-holiday/valid-from-year.html
+$dokka.location:org.javafreedom.khol/Declaration.OrthodoxEasterBasedHoliday/validIn/#/PointingToDeclaration/khol/org.javafreedom.khol/-declaration/-orthodox-easter-based-holiday/valid-in.html
 $dokka.location:org.javafreedom.khol/Declaration///PointingToDeclaration/khol/org.javafreedom.khol/-declaration/index.html
 $dokka.location:org.javafreedom.khol/Declaration/concreteForYear/#kotlin.Int/PointingToDeclaration/khol/org.javafreedom.khol/-declaration/concrete-for-year.html
 $dokka.location:org.javafreedom.khol/Declaration/name/#/PointingToDeclaration/khol/org.javafreedom.khol/-declaration/name.html
@@ -78,12 +88,14 @@ $dokka.location:org.javafreedom.khol/HolidayDeclarations///PointingToDeclaration
 $dokka.location:org.javafreedom.khol/HolidayDeclarations/HolidayDeclarations/#kotlin.String/PointingToDeclaration/khol/org.javafreedom.khol/-holiday-declarations/-holiday-declarations.html
 $dokka.location:org.javafreedom.khol/HolidayDeclarations/declarations/#/PointingToDeclaration/khol/org.javafreedom.khol/-holiday-declarations/declarations.html
 $dokka.location:org.javafreedom.khol/HolidayDeclarations/validIn/#/PointingToDeclaration/khol/org.javafreedom.khol/-holiday-declarations/valid-in.html
+$dokka.location:org.javafreedom.khol/KHol.Companion///PointingToDeclaration/khol/org.javafreedom.khol/-k-hol/-companion/index.html
+$dokka.location:org.javafreedom.khol/KHol.Companion/VALID_START_YEAR/#/PointingToDeclaration/khol/org.javafreedom.khol/-k-hol/-companion/-v-a-l-i-d_-s-t-a-r-t_-y-e-a-r.html
 $dokka.location:org.javafreedom.khol/KHol///PointingToDeclaration/khol/org.javafreedom.khol/-k-hol/index.html
-$dokka.location:org.javafreedom.khol/KHol/KHol/#org.javafreedom.khol.HolidayDeclarations#kotlin.Int#kotlin.String/PointingToDeclaration/khol/org.javafreedom.khol/-k-hol/-k-hol.html
-$dokka.location:org.javafreedom.khol/KHol/holidays/#/PointingToDeclaration/khol/org.javafreedom.khol/-k-hol/holidays.html
-$dokka.location:org.javafreedom.khol/KHol/validHolidays/#/PointingToDeclaration/khol/org.javafreedom.khol/-k-hol/valid-holidays.html
-$dokka.location:org.javafreedom.khol/KHol/validIn/#/PointingToDeclaration/khol/org.javafreedom.khol/-k-hol/valid-in.html
-$dokka.location:org.javafreedom.khol/KHol/year/#/PointingToDeclaration/khol/org.javafreedom.khol/-k-hol/year.html
+$dokka.location:org.javafreedom.khol/KHol/KHol/#org.javafreedom.khol.HolidayDeclarations#kotlin.String/PointingToDeclaration/khol/org.javafreedom.khol/-k-hol/-k-hol.html
+$dokka.location:org.javafreedom.khol/KHol/validHolidays/#kotlin.Int/PointingToDeclaration/khol/org.javafreedom.khol/-k-hol/valid-holidays.html
+$dokka.location:org.javafreedom.khol/KHol/validHolidays/#kotlinx.datetime.LocalDate#kotlinx.datetime.LocalDate/PointingToDeclaration/khol/org.javafreedom.khol/-k-hol/valid-holidays.html
+$dokka.location:org.javafreedom.khol/KHolException///PointingToDeclaration/khol/org.javafreedom.khol/-k-hol-exception/index.html
+$dokka.location:org.javafreedom.khol/KHolException/KHolException/#kotlin.String/PointingToDeclaration/khol/org.javafreedom.khol/-k-hol-exception/-k-hol-exception.html
 org.javafreedom.khol
 org.javafreedom.khol.algorithm
 org.javafreedom.khol.declarations

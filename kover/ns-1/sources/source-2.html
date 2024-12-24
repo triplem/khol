@@ -99,7 +99,14 @@ Current scope: khol<span class="separator">|</span>    <a href="../../index.html
 &nbsp;import kotlinx.datetime.plus
 &nbsp;import org.javafreedom.khol.algorithm.FirstAdvent
 &nbsp;import org.javafreedom.khol.algorithm.GregorianEasterSundayGauss
+&nbsp;import org.javafreedom.khol.algorithm.OrthodoxEaster
 &nbsp;
+&nbsp;/**
+&nbsp; * A declaration of a single Holiday, meaning the attributes when and where it is valid and how to calculate it.
+&nbsp; *
+&nbsp; * The conreteForYear method calculates the given holiday for any specific given year using the properties already
+&nbsp; * present in the concrete class.
+&nbsp; */
 &nbsp;sealed class Declaration(open val name: String,
 &nbsp;                         open val validFromYear: Int,
 &nbsp;                         open val validIn: Set&lt;String&gt;) {
@@ -128,6 +135,21 @@ Current scope: khol<span class="separator">|</span>    <a href="../../index.html
 &nbsp;
 &nbsp;        override fun concreteForYear(year: Int): LocalDate {
 &nbsp;            val value = gregorianEasterSundayAlgorithm.calculateBaseDate(year).plus(this.offset, DateTimeUnit.DAY)
+&nbsp;            return LocalDate(year, value.month, value.dayOfMonth)
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    data class OrthodoxEasterBasedHoliday(
+&nbsp;        val offset: Int,
+&nbsp;        override val name: String,
+&nbsp;        override val validFromYear: Int = 1990,
+&nbsp;        override val validIn: Set&lt;String&gt; = emptySet()
+&nbsp;    ) : Declaration(name, validFromYear, validIn) {
+&nbsp;
+&nbsp;        private val orthodoxEaster = OrthodoxEaster()
+&nbsp;
+&nbsp;        override fun concreteForYear(year: Int): LocalDate {
+&nbsp;            val value = orthodoxEaster.calculateBaseDate(year).plus(this.offset, DateTimeUnit.DAY)
 &nbsp;            return LocalDate(year, value.month, value.dayOfMonth)
 &nbsp;        }
 &nbsp;    }
@@ -174,7 +196,7 @@ Current scope: khol<span class="separator">|</span>    <a href="../../index.html
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2024-12-23 20:35</div>
+    <div style="float:right;">generated on 2024-12-24 20:03</div>
 </div>
 </body>
 </html>

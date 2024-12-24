@@ -80,7 +80,7 @@ Current scope: khol<span class="separator">|</span>    <a href="../../index.html
     100%
   </span>
   <span class="absValue">
-    (28/28)
+    (27/27)
   </span>
 </td>
 </tr>
@@ -95,23 +95,24 @@ Current scope: khol<span class="separator">|</span>    <a href="../../index.html
 <code class="sourceCode" id="sourceCode">&nbsp;@file:Suppress(&quot;detekt:style:MagicNumber&quot;)
 &nbsp;package org.javafreedom.khol.algorithm
 &nbsp;
-&nbsp;import kotlinx.datetime.DayOfWeek
 &nbsp;import kotlinx.datetime.DateTimeUnit
 &nbsp;import kotlinx.datetime.LocalDate
-&nbsp;import kotlinx.datetime.plus
+&nbsp;import kotlinx.datetime.minus
 &nbsp;import org.javafreedom.khol.BaseCalculationAlgorithm
 &nbsp;
+&nbsp;/**
+&nbsp; * The First Sunday of Advent is the fourth Sunday before Christmas Day.
+&nbsp; */
 <b class="fc">&nbsp;class FirstAdvent : BaseCalculationAlgorithm {</b>
 &nbsp;
 &nbsp;    override fun calculateBaseDate(year: Int): LocalDate {
-&nbsp;        // Find November 30th of the given year
-<b class="fc">&nbsp;        val november30 = LocalDate(year, 11, 30)</b>
-&nbsp;        // Get the day of the week for November 30th
-<b class="fc">&nbsp;        val dayOfWeek = november30.dayOfWeek</b>
-&nbsp;        // Calculate how many days to add to get to the nearest Sunday (Advent starts)
-<b class="fc">&nbsp;        val daysToSunday = (DayOfWeek.SUNDAY.value - dayOfWeek.value + 7) % 7</b>
-&nbsp;        // The first Advent Sunday is the Sunday closest to or on November 30th
-<b class="fc">&nbsp;        return november30.plus(daysToSunday, DateTimeUnit.DAY)</b>
+&nbsp;        // Find Christmas Day of the given year
+<b class="fc">&nbsp;        val christmas = LocalDate(year, 12, 25)</b>
+&nbsp;        // Find the Sunday before Christmas, which is the Fourth Sunday of Advent
+<b class="fc">&nbsp;        val fourthAdvent = christmas.minus((christmas.dayOfWeek.value % 7).toLong(),</b>
+<b class="fc">&nbsp;            DateTimeUnit.DAY)</b>
+&nbsp;        // Subtract 21 days (3 weeks) to get the First Sunday of Advent
+<b class="fc">&nbsp;        return fourthAdvent.minus(3, DateTimeUnit.WEEK)</b>
 &nbsp;    }
 &nbsp;
 &nbsp;}
@@ -138,7 +139,7 @@ Current scope: khol<span class="separator">|</span>    <a href="../../index.html
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2024-12-23 20:35</div>
+    <div style="float:right;">generated on 2024-12-24 20:03</div>
 </div>
 </body>
 </html>
