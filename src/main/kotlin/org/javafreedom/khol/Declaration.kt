@@ -7,6 +7,12 @@ import org.javafreedom.khol.algorithm.FirstAdvent
 import org.javafreedom.khol.algorithm.GregorianEasterSundayGauss
 import org.javafreedom.khol.algorithm.OrthodoxEaster
 
+/**
+ * A declaration of a single Holiday, meaning the attributes when and where it is valid and how to calculate it.
+ *
+ * The conreteForYear method calculates the given holiday for any specific given year using the properties already
+ * present in the concrete class.
+ */
 sealed class Declaration(open val name: String,
                          open val validFromYear: Int,
                          open val validIn: Set<String>) {

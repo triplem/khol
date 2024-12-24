@@ -4,7 +4,7 @@ import kotlinx.datetime.number
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class FirstAdventTest {
+internal class FirstAdventTest {
 
     private val firstAdvent = FirstAdvent()
 

@@ -5,7 +5,7 @@ import kotlinx.datetime.number
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class GregorianEasterSundayGaussTest {
+internal class GregorianEasterSundayGaussTest {
 
     private val argumentsList = mutableListOf(
         EasterCalculusArguments(2008, 3, 23),
