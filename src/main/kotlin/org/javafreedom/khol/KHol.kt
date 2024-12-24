@@ -3,13 +3,27 @@ package org.javafreedom.khol
 import kotlinx.datetime.LocalDate
 
 /**
- * Some doc
+ * This is the central entry point for the calculation of Holidays using KHol.
+ *
+ * It provides a way to access Holidays using different access methods. There is a caching
+ * included to provide faster access to already calculated holidays by year.
  */
 class KHol(private val holidays: HolidayDeclarations, private val validIn: String) {
 
+    private val holidaysPerYear = mutableMapOf<Int, List<LocalDate>>()
+
+    /**
+     * Construct all valid holidays using the given HolidayDeclarations for the given year.
+     *
+     * The calculated holidays are cached.
+     */
     fun validHolidays(year: Int) : List<LocalDate> {
         if (year < VALID_START_YEAR) throw KHolException("Year should be after 1989")
 
+        return holidaysPerYear.getOrDefault(year, constructHolidays(year))
+    }
+
+    private fun constructHolidays(year: Int): List<LocalDate> {
         val result = mutableListOf<LocalDate>()
 
         holidays.declarations().filter {
