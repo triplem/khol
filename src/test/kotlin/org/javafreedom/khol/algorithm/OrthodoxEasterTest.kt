@@ -5,7 +5,7 @@ import kotlinx.datetime.number
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class OrthodoxEasterTest {
+internal class OrthodoxEasterTest {
 
     private val argumentsList = mutableListOf(
         EasterCalculusArguments(2008, 4, 27),

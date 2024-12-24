@@ -4,9 +4,9 @@ import kotlinx.datetime.number
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-private data class DeclarationArguments(val year: Int, val month: Int, val day: Int, val days: Int)
+internal data class DeclarationArguments(val year: Int, val month: Int, val day: Int, val days: Int)
 
-class DeclarationTest {
+internal class DeclarationTest {
 
     @Test
     fun fixedHolidayToLocalDate() {

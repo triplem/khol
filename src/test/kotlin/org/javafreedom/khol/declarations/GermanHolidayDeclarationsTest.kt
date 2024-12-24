@@ -3,7 +3,7 @@ package org.javafreedom.khol.declarations
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class GermanHolidayDeclarationsTest {
+internal class GermanHolidayDeclarationsTest {
 
     @Test
     fun declarationsTest() {

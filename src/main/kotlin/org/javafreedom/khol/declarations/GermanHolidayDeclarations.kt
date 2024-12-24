@@ -1,5 +1,4 @@
 @file:Suppress("detekt:style:MagicNumber")
-
 package org.javafreedom.khol.declarations
 
 import org.javafreedom.khol.Declaration

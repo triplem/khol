@@ -7,7 +7,7 @@ import kotlin.test.assertContains
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 
-class KHolGermanHolidaysTest {
+internal class KHolGermanHolidaysTest {
 
     @Test
     fun northrhineContainsReformationDay() {

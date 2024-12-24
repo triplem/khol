@@ -21,6 +21,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.1")
 
     testImplementation(kotlin("test"))
+
+    testImplementation("com.lemonappdev:konsist:0.17.3")
 }
 
 tasks.test {
