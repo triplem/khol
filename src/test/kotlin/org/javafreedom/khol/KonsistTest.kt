@@ -40,6 +40,6 @@ internal class KonsistTest {
     }
 
     companion object {
-        val BASE_PACKAGE = "org.javafreedom.khol"
+        const val BASE_PACKAGE = "org.javafreedom.khol"
     }
 }

@@ -5,9 +5,11 @@ import kotlinx.datetime.LocalDate
 /**
  * Some doc
  */
-class KHol(val holidays: HolidayDeclarations, val year: Int, val validIn: String) {
+class KHol(private val holidays: HolidayDeclarations, private val validIn: String) {
 
-    fun validHolidays() : List<LocalDate> {
+    fun validHolidays(year: Int) : List<LocalDate> {
+        if (year < VALID_START_YEAR) throw KHolException("Year should be after 1989")
+
         val result = mutableListOf<LocalDate>()
 
         holidays.declarations().filter {
@@ -18,5 +20,25 @@ class KHol(val holidays: HolidayDeclarations, val year: Int, val validIn: String
         }
 
         return result
+    }
+
+    /**
+     * All Holidays which are greater then, or equal to start and less then end are returned
+     */
+    fun validHolidays(start: LocalDate, end: LocalDate) : List<LocalDate> {
+        if (start >= end) throw KHolException("Start Date should be before to End Date")
+
+        val result = mutableListOf<LocalDate>()
+        for (year in start.year..end.year) {
+            validHolidays(year)
+                .filter { it >= start && it < end }
+                .forEach { result.add(it) }
+        }
+
+        return result
+    }
+
+    companion object {
+        const val VALID_START_YEAR = 1990
     }
 }

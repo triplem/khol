@@ -11,9 +11,9 @@ public class KHolGermanHolidaysJavaTest {
     @Test
     void testNW2024() {
         var holidayDeclarations = new GermanHolidayDeclarations();
-        var sut = new KHol(holidayDeclarations, 2024, "NW");
+        var sut = new KHol(holidayDeclarations, "NW");
 
-        var validHoldays = sut.validHolidays();
+        var validHoldays = sut.validHolidays(2024);
 
         assertEquals(11, validHoldays.size());
         assertTrue(validHoldays.stream().anyMatch(it ->

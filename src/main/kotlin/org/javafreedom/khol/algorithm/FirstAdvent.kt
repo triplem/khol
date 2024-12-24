@@ -1,7 +1,9 @@
 @file:Suppress("detekt:style:MagicNumber")
 package org.javafreedom.khol.algorithm
 
-import kotlinx.datetime.*
+import kotlinx.datetime.DateTimeUnit
+import kotlinx.datetime.LocalDate
+import kotlinx.datetime.minus
 import org.javafreedom.khol.BaseCalculationAlgorithm
 
 /**

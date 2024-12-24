@@ -1,3 +1,4 @@
+@file:Suppress("detekt:style:MagicNumber")
 package org.javafreedom.khol.algorithm
 
 import kotlinx.datetime.DateTimeUnit
@@ -37,7 +38,8 @@ class OrthodoxEaster : BaseCalculationAlgorithm {
     private fun julianToGregorianDifference(year: Int): Int {
         // The base year when the difference started (1582) - difference in days at that time was 10
         val baseYear = 1582
-        // Difference in days (starts at 10 days for 1582, increases by 1 every 100 years except centuries divisible by 400)
+        // Difference in days (starts at 10 days for 1582, increases by 1 every 100 years except centuries
+        // divisible by 400)
         var difference = 10
 
         // Calculate how many centuries have passed since the base year
