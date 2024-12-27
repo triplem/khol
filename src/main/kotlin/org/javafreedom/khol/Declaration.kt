@@ -1,6 +1,7 @@
 package org.javafreedom.khol
 
 import kotlinx.datetime.DateTimeUnit
+import kotlinx.datetime.DayOfWeek
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.plus
 import org.javafreedom.khol.algorithm.FirstAdvent
@@ -77,5 +78,8 @@ sealed class Declaration(open val name: String,
 }
 
 abstract class HolidayDeclarations(val validIn: String) {
+
     abstract fun declarations(): List<Declaration>
+
+    abstract fun weekends(): Set<DayOfWeek>
 }

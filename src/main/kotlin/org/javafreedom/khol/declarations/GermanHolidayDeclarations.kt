@@ -1,6 +1,7 @@
 @file:Suppress("detekt:style:MagicNumber")
 package org.javafreedom.khol.declarations
 
+import kotlinx.datetime.DayOfWeek
 import org.javafreedom.khol.Declaration
 import org.javafreedom.khol.HolidayDeclarations
 
@@ -133,5 +134,9 @@ class GermanHolidayDeclarations: HolidayDeclarations("DE") {
             add(allSaintsDay)
             add(repentanceAndPrayerDay)
         }
+    }
+
+    override fun weekends(): Set<DayOfWeek> {
+        return setOf(java.time.DayOfWeek.SATURDAY, java.time.DayOfWeek.SUNDAY)
     }
 }
