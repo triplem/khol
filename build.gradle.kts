@@ -17,7 +17,7 @@ plugins {
 group = "org.javafreedom"
 project.version = project.findProperty("version") as String? ?: "0.0.1-SNAPSHOT"
 
-val kotlinxDatetimeVersion = "0.6.1"
+val kotlinxDatetimeVersion = "0.6.2"
 val konsistVersion = "0.17.3"
 
 dependencies {
