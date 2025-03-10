@@ -3,7 +3,7 @@ import com.vanniktech.maven.publish.SonatypeHost
 plugins {
     kotlin("jvm") version "2.1.0"
 
-    id("com.vanniktech.maven.publish") version "0.30.0"
+    id("com.vanniktech.maven.publish") version "0.31.0"
     id("io.gitlab.arturbosch.detekt") version "1.23.7"
 
     id("org.jetbrains.kotlinx.kover") version "0.9.0"
